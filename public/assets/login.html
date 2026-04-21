@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOIDX | Đăng nhập</title>
+    <meta name="theme-color" content="#111111">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="login">
+    <main class="auth-shell">
+        <section class="auth-card">
+            <a href="/" class="logo">VOIDX<span>.</span></a>
+            <p class="eyebrow">Đăng nhập</p>
+            <h1>Truy cập tài khoản của bạn</h1>
+            <p class="auth-copy">Dùng tài khoản quản trị để vào trang admin, hoặc đăng nhập tài khoản khách nếu bạn muốn lưu thông tin lâu dài.</p>
+
+            <form id="login-form" class="auth-form">
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" placeholder="ban@email.com" required>
+                </label>
+                <label>
+                    <span>Mật khẩu</span>
+                    <input type="password" name="password" placeholder="Tối thiểu 6 ký tự" required>
+                </label>
+                <button type="submit" class="cta-btn auth-btn">Đăng nhập</button>
+            </form>
+
+            <p class="auth-note">Chưa có tài khoản? <a href="/dang-ky">Đăng ký ngay</a></p>
+            <p class="auth-note">Muốn quay lại mua hàng? <a href="/">Về trang chủ</a></p>
+        </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/assets/auth.js"></script>
+</body>
+</html>

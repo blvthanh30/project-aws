@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOIDX Admin</title>
+    <meta name="theme-color" content="#111111">
+    <link rel="stylesheet" href="/admin/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="admin-shell">
+        <header class="admin-header">
+            <div>
+                <p class="eyebrow">Quản trị cửa hàng</p>
+                <h1>VOIDX Admin Dashboard</h1>
+                <p>Theo dõi đơn hàng, doanh thu tạm tính và danh sách khách quan tâm tại một nơi.</p>
+            </div>
+            <div class="admin-actions">
+                <span id="admin-user" class="admin-user">Chưa đăng nhập</span>
+                <button type="button" class="refresh-btn" id="logout-btn">Đăng xuất</button>
+                <a href="/" class="back-link">Về trang bán hàng</a>
+            </div>
+        </header>
+
+        <section class="stats-grid" id="stats-grid">
+            <article class="stat-card">
+                <span>Doanh thu tạm tính</span>
+                <strong id="stat-revenue">0 VNĐ</strong>
+            </article>
+            <article class="stat-card">
+                <span>Tổng đơn hàng</span>
+                <strong id="stat-orders">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Đơn cần xử lý</span>
+                <strong id="stat-pending">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Khách đăng ký email</span>
+                <strong id="stat-subscribers">0</strong>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="panel-head">
+                <div>
+                    <p class="eyebrow">Đơn hàng</p>
+                    <h2>Danh sách đơn mới</h2>
+                </div>
+                <button type="button" class="refresh-btn" id="refresh-orders">Làm mới</button>
+            </div>
+            <div class="orders-table-wrap">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Khách hàng</th>
+                            <th>Sản phẩm</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Cập nhật</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="two-column">
+            <section class="panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Đăng ký email</p>
+                        <h2>Danh sách khách quan tâm</h2>
+                    </div>
+                </div>
+                <div class="list-block" id="subscribers-list"></div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Gợi ý vận hành</p>
+                        <h2>Checklist đưa web vào kinh doanh</h2>
+                    </div>
+                </div>
+                <div class="checklist">
+                    <article>
+                        <strong>1. Cập nhật thông tin shop thật</strong>
+                        <p>Sửa hotline, địa chỉ, email và mạng xã hội trong file dữ liệu cửa hàng.</p>
+                    </article>
+                    <article>
+                        <strong>2. Thay ảnh thật của sản phẩm</strong>
+                        <p>Dùng ảnh chụp sản phẩm của shop để tăng độ tin cậy và tỷ lệ mua.</p>
+                    </article>
+                    <article>
+                        <strong>3. Kiểm tra đơn hàng mỗi ngày</strong>
+                        <p>Vào trang này để cập nhật trạng thái đơn và liên hệ xác nhận với khách.</p>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+    <script src="/admin/main.js"></script>
+</body>
+</html>

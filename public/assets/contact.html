@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOIDX | Liên hệ</title>
+    <meta name="description" content="Trang liên hệ với thông tin cửa hàng, email, hotline và đăng ký nhận tin.">
+    <meta name="theme-color" content="#111111">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="contact">
+    <div id="loader" aria-hidden="true"><span>VOIDX</span></div>
+    <div class="site-shell">
+        <header class="page-hero">
+            <nav class="navbar">
+                <a href="/" class="logo" aria-label="Trang chủ VOIDX">VOIDX<span>.</span></a>
+                <button class="menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span></button>
+                <div class="menu">
+                    <a href="/">Trang chủ</a>
+                    <a href="/san-pham">Sản phẩm</a>
+                    <a href="/gioi-thieu">Giới thiệu</a>
+                    <a href="/chinh-sach">Chính sách</a>
+                    <a href="/lien-he" class="is-current">Liên hệ</a>
+                    <a href="/dang-nhap">Đăng nhập</a>
+                    <a href="/admin" class="admin-link">Quản trị</a>
+                    <button type="button" class="cart-button" id="cart-button">Giỏ hàng <span id="cart-count">0</span></button>
+                </div>
+            </nav>
+            <div class="page-hero-content">
+                <p class="eyebrow">Trang kết nối</p>
+                <h1>Khách cần một nơi rõ ràng để biết liên hệ shop bằng cách nào.</h1>
+                <p>Trang liên hệ riêng giúp thông tin hotline, địa chỉ, email và mạng xã hội không bị chìm trong hàng loạt nội dung khác.</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="contact-section compact-top">
+                <div class="section-head">
+                    <div>
+                        <p class="eyebrow">Liên hệ nhanh</p>
+                        <h2>Tất cả điểm chạm của khách được gom vào một trang riêng</h2>
+                    </div>
+                </div>
+                <div class="contact-grid">
+                    <article class="contact-card">
+                        <p class="eyebrow">Hotline</p>
+                        <h3 id="store-hotline">0900 000 000</h3>
+                        <p>Tư vấn size, xác nhận đơn và hỗ trợ các câu hỏi phát sinh trong quá trình mua.</p>
+                    </article>
+                    <article class="contact-card">
+                        <p class="eyebrow">Địa chỉ</p>
+                        <h3 id="store-address">123 Nguyễn Trãi, Quận 1</h3>
+                        <p>Thay thành địa chỉ cửa hàng thật hoặc điểm nhận hàng của shop.</p>
+                    </article>
+                    <article class="contact-card">
+                        <p class="eyebrow">Mạng xã hội</p>
+                        <h3 id="store-social">Instagram / Facebook / TikTok</h3>
+                        <p>Kết nối khách với hệ sinh thái nội dung của shop và đưa họ quay lại website khi cần mua.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="newsletter-section">
+                <div>
+                    <p class="eyebrow">Giữ liên lạc</p>
+                    <h2>Thu email ở một trang riêng cho những khách chưa mua ngay</h2>
+                    <p>Không phải ai vào web cũng chốt đơn ngay. Trang liên hệ là nơi phù hợp để giữ lại khách quan tâm qua email.</p>
+                </div>
+                <form class="newsletter-form" id="newsletter-form">
+                    <label class="sr-only" for="email">Email</label>
+                    <input id="email" type="email" placeholder="email@cuaban.com" required>
+                    <button type="submit">Đăng ký nhận tin</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer footer-rich">
+            <div class="footer-grid">
+                <section class="footer-brand">
+                    <p class="footer-kicker">Voidx Studio</p>
+                    <a href="/" class="logo">VOIDX<span>.</span></a>
+                    <p class="footer-copy">Trang liên hệ được đặt rõ ràng để khách có thể gọi, nhắn hoặc ghé shop ngay khi cần thêm tư vấn trước lúc chốt đơn.</p>
+                    <div class="footer-tags">
+                        <span>Tư vấn nhanh</span>
+                        <span>Hotline</span>
+                        <span>CSKH</span>
+                    </div>
+                </section>
+
+                <section class="footer-column">
+                    <p class="footer-title">Khám phá</p>
+                    <div class="footer-links">
+                        <a href="/">Trang chủ</a>
+                        <a href="/san-pham">Sản phẩm</a>
+                        <a href="/gioi-thieu">Giới thiệu</a>
+                        <a href="/chinh-sach">Chính sách</a>
+                        <a href="/lien-he">Liên hệ</a>
+                    </div>
+                </section>
+
+                <section class="footer-column">
+                    <p class="footer-title">Điểm chạm nhanh</p>
+                    <div class="footer-meta">
+                        <div>
+                            <span>Hotline</span>
+                            <strong id="footer-hotline">0900 000 000</strong>
+                        </div>
+                        <div>
+                            <span>Email</span>
+                            <strong id="footer-email">hello@voidx.vn</strong>
+                        </div>
+                        <div>
+                            <span>Địa chỉ</span>
+                            <strong id="footer-address">123 Nguyễn Trãi, Quận 1</strong>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-note">Một điểm chạm cuối thật gọn và đẹp sẽ giữ khách ở lại lâu hơn trước khi họ rời trang.</p>
+                <p class="copyright">Bản quyền 2026 VOIDX Studio. Đã đăng ký mọi quyền.</p>
+            </div>
+        </footer>
+    </div>
+
+    <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+        <div class="cart-overlay" id="cart-overlay"></div>
+        <div class="cart-panel">
+            <div class="cart-header">
+                <div><p class="eyebrow">Giỏ hàng</p><h2>Thông tin đặt hàng</h2></div>
+                <button type="button" class="close-cart" id="close-cart" aria-label="Đóng giỏ hàng">×</button>
+            </div>
+            <div class="cart-body">
+                <div class="cart-items" id="cart-items"></div>
+                <form class="customer-form" id="customer-form">
+                    <div class="form-grid">
+                        <label><span>Họ tên</span><input id="customer-name" name="name" type="text" placeholder="Nguyễn Văn A" required></label>
+                        <label><span>Số điện thoại</span><input id="customer-phone" name="phone" type="tel" placeholder="0900000000" required></label>
+                    </div>
+                    <label><span>Địa chỉ nhận hàng</span><textarea id="customer-address" name="address" rows="3" placeholder="Số nhà, đường, phường, quận..." required></textarea></label>
+                    <label><span>Ghi chú đơn hàng</span><textarea id="customer-note" name="note" rows="3" placeholder="Tư vấn size, thời gian giao, yêu cầu đặc biệt..."></textarea></label>
+                </form>
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row"><span>Tạm tính</span><strong id="cart-subtotal">0 VNĐ</strong></div>
+                <div class="summary-row"><span>Hình thức thanh toán</span><strong>COD / Chuyển khoản</strong></div>
+                <p class="summary-note">Nhấn gửi đơn hàng để lưu đơn vào hệ thống. Shop sẽ liên hệ xác nhận sau.</p>
+                <button type="button" class="checkout-btn" id="checkout-btn">Gửi đơn hàng</button>
+            </div>
+        </div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/assets/main.js"></script>
+</body>
+</html>

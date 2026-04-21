@@ -1,0 +1,17 @@
+{
+  "name": "VOIDX Studio",
+  "headline": "Streetwear tối giản, dễ bán và đủ chất riêng",
+  "subheadline": "Website sẵn sàng để nhận đơn, giới thiệu sản phẩm và chăm sóc khách hàng ngay từ lần ghé đầu tiên.",
+  "hotline": "0900 000 000",
+  "email": "hello@voidx.vn",
+  "address": "123 Nguyễn Trãi, Quận 1, TP.HCM",
+  "socials": {
+    "instagram": "@voidx.studio",
+    "facebook": "fb.com/voidx.studio",
+    "tiktok": "@voidx.studio"
+  },
+  "shippingPolicy": "Miễn phí nội thành cho đơn từ 799.000đ. Ngoại thành và tỉnh sẽ được báo phí khi xác nhận đơn.",
+  "returnPolicy": "Hỗ trợ đổi size trong 7 ngày nếu sản phẩm còn mới, chưa giặt và còn tag.",
+  "paymentPolicy": "Chấp nhận COD và chuyển khoản trước. Shop xác nhận đơn qua điện thoại hoặc tin nhắn.",
+  "heroImage": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80"
+}

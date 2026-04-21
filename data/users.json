@@ -1,0 +1,18 @@
+[
+  {
+    "id": "6d998580-007b-477d-9148-28e23b4ec26b",
+    "name": "vanthanh",
+    "email": "vanthanh@gmail.com",
+    "passwordHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "role": "customer",
+    "createdAt": "2026-04-20T10:01:32.970Z"
+  },
+  {
+    "id": "2ec1d5c4-8765-42bd-805e-8535633a4889",
+    "name": "vanthanh",
+    "email": "blvthanh30@gmail.com",
+    "passwordHash": "a64a189eec7f6d1a1b7bba2439392320d91e092687e6f6fed9702352f21fc956",
+    "role": "admin",
+    "createdAt": "2026-04-20T10:00:17.358Z"
+  }
+]
