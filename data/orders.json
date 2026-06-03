@@ -1,1 +1,295 @@
-[]
+[
+  {
+    "orderCode": "VDX-27771789-003A",
+    "status": "Chờ xác nhận",
+    "customer": {
+      "name": "23662032 Bui Le Van Thanh",
+      "phone": "0923627588",
+      "email": "",
+      "provinceCode": "",
+      "province": "",
+      "districtCode": "",
+      "district": "",
+      "wardCode": "",
+      "ward": "",
+      "addressLine": "123/123 le thanh phuong",
+      "address": "123/123 le thanh phuong",
+      "shippingMethod": "shop",
+      "paymentMethod": "cod",
+      "note": "zie1"
+    },
+    "items": [
+      {
+        "id": 3,
+        "name": "Quần Utility Cargo V2",
+        "size": "M",
+        "color": "Đen",
+        "quantity": 2,
+        "price": 720000,
+        "lineTotal": 1440000
+      },
+      {
+        "id": 1,
+        "name": "Áo thun Cyber VOIDX",
+        "size": "S",
+        "color": "Đen",
+        "quantity": 1,
+        "price": 450000,
+        "lineTotal": 450000
+      }
+    ],
+    "itemCount": 3,
+    "subtotal": 1890000,
+    "discount": 0,
+    "coupon": null,
+    "total": 1890000,
+    "payment": {
+      "method": "cod",
+      "label": "COD - Thanh toán khi nhận hàng",
+      "amount": 1890000,
+      "status": "cod-pending",
+      "statusLabel": "Thu tiền khi giao hàng"
+    },
+    "shipping": {
+      "provider": "shop",
+      "providerLabel": "Shop tự giao / xác nhận sau",
+      "status": "not-pushed",
+      "statusLabel": "Chưa đẩy vận chuyển",
+      "trackingCode": ""
+    },
+    "createdAt": "2026-04-23T07:02:51.800Z",
+    "updatedAt": "2026-04-23T07:02:51.800Z",
+    "statusHistory": [
+      {
+        "status": "Chờ xác nhận",
+        "changedAt": "2026-04-23T07:02:51.800Z",
+        "changedBy": "system"
+      }
+    ]
+  },
+  {
+    "orderCode": "VDX-11657872-8B90",
+    "status": "Đang giao",
+    "customer": {
+      "name": "van thanh",
+      "phone": "0923627588",
+      "email": "",
+      "provinceCode": "",
+      "province": "",
+      "districtCode": "",
+      "district": "",
+      "wardCode": "",
+      "ward": "",
+      "addressLine": "17/13 lê thành phương",
+      "address": "17/13 lê thành phương",
+      "shippingMethod": "standard",
+      "paymentMethod": "cod",
+      "note": "size 1"
+    },
+    "items": [
+      {
+        "id": 2,
+        "name": "Hoodie Neon Ghost",
+        "size": "M",
+        "color": "Xám than",
+        "quantity": 1,
+        "price": 890000,
+        "lineTotal": 890000
+      }
+    ],
+    "itemCount": 1,
+    "total": 890000,
+    "createdAt": "2026-04-23T02:34:17.872Z",
+    "updatedAt": "2026-04-23T02:50:07.007Z",
+    "statusHistory": [
+      {
+        "status": "Đang giao",
+        "changedAt": "2026-04-23T02:50:07.007Z",
+        "changedBy": "admin@voidx.vn"
+      },
+      {
+        "status": "Chờ xác nhận",
+        "changedAt": "2026-04-23T02:34:17.872Z",
+        "changedBy": "system"
+      }
+    ]
+  },
+  {
+    "orderCode": "VDX-09600099-3BF5",
+    "status": "Chờ xác nhận",
+    "customer": {
+      "name": "bùi lê văn thành",
+      "phone": "0923627588",
+      "email": "",
+      "provinceCode": "",
+      "province": "",
+      "districtCode": "",
+      "district": "",
+      "wardCode": "",
+      "ward": "",
+      "addressLine": "17/13 lê thành phiowngs",
+      "address": "17/13 lê thành phiowngs",
+      "shippingMethod": "standard",
+      "paymentMethod": "cod",
+      "note": "size 1"
+    },
+    "items": [
+      {
+        "id": 3,
+        "name": "Quần Utility Cargo V2",
+        "size": "M",
+        "color": "Đen",
+        "quantity": 1,
+        "price": 720000,
+        "lineTotal": 720000
+      }
+    ],
+    "itemCount": 1,
+    "total": 720000,
+    "createdAt": "2026-04-23T02:00:00.099Z",
+    "updatedAt": "2026-04-23T02:00:00.099Z",
+    "statusHistory": [
+      {
+        "status": "Chờ xác nhận",
+        "changedAt": "2026-04-23T02:00:00.099Z",
+        "changedBy": "system"
+      }
+    ]
+  },
+  {
+    "orderCode": "VDX-53739856-5ED7",
+    "status": "Chờ xác nhận",
+    "customer": {
+      "name": "thành",
+      "phone": "0923627588",
+      "address": "dsfaw",
+      "note": "còn"
+    },
+    "items": [
+      {
+        "id": 3,
+        "name": "Quần Utility Cargo V2",
+        "size": "M",
+        "color": "Đen",
+        "quantity": 1,
+        "price": 720000,
+        "lineTotal": 720000
+      }
+    ],
+    "itemCount": 1,
+    "total": 720000,
+    "createdAt": "2026-04-22T10:28:59.857Z",
+    "updatedAt": "2026-04-22T10:28:59.857Z",
+    "statusHistory": [
+      {
+        "status": "Chờ xác nhận",
+        "changedAt": "2026-04-22T10:28:59.857Z",
+        "changedBy": "system"
+      }
+    ]
+  },
+  {
+    "orderCode": "VDX-52736737-4A76",
+    "status": "Chờ xác nhận",
+    "customer": {
+      "name": "thành",
+      "phone": "0923627588",
+      "address": "dsfaw",
+      "note": ""
+    },
+    "items": [
+      {
+        "id": 2,
+        "name": "Hoodie Neon Ghost",
+        "quantity": 1,
+        "price": 890000,
+        "lineTotal": 890000
+      }
+    ],
+    "itemCount": 1,
+    "total": 890000,
+    "createdAt": "2026-04-22T10:12:16.737Z",
+    "updatedAt": "2026-04-22T10:12:16.737Z",
+    "statusHistory": [
+      {
+        "status": "Chờ xác nhận",
+        "changedAt": "2026-04-22T10:12:16.737Z",
+        "changedBy": "system"
+      }
+    ]
+  },
+  {
+    "orderCode": "VDX-52682785-C42B",
+    "status": "Chờ xác nhận",
+    "customer": {
+      "name": "thành",
+      "phone": "0923627588",
+      "address": "dsfaw",
+      "note": ""
+    },
+    "items": [
+      {
+        "id": 1,
+        "name": "Áo thun Cyber VOIDX",
+        "quantity": 1,
+        "price": 450000,
+        "lineTotal": 450000
+      }
+    ],
+    "itemCount": 1,
+    "total": 450000,
+    "createdAt": "2026-04-22T10:11:22.799Z",
+    "updatedAt": "2026-04-22T10:11:22.799Z",
+    "statusHistory": [
+      {
+        "status": "Chờ xác nhận",
+        "changedAt": "2026-04-22T10:11:22.799Z",
+        "changedBy": "system"
+      }
+    ]
+  },
+  {
+    "orderCode": "VDX-28028004-0F33",
+    "status": "Chờ xác nhận",
+    "customer": {
+      "name": "thành",
+      "phone": "0923627588",
+      "address": "dsfaw",
+      "note": ""
+    },
+    "items": [
+      {
+        "id": 2,
+        "name": "Hoodie Neon Ghost",
+        "quantity": 1,
+        "price": 890000,
+        "lineTotal": 890000
+      },
+      {
+        "id": 8,
+        "name": "Sơ mi Cuban Midnight",
+        "quantity": 1,
+        "price": 610000,
+        "lineTotal": 610000
+      },
+      {
+        "id": 3,
+        "name": "Quần Utility Cargo V2",
+        "quantity": 1,
+        "price": 720000,
+        "lineTotal": 720000
+      }
+    ],
+    "itemCount": 3,
+    "total": 2220000,
+    "createdAt": "2026-04-22T03:20:28.004Z",
+    "updatedAt": "2026-04-22T03:20:28.004Z",
+    "statusHistory": [
+      {
+        "status": "Chờ xác nhận",
+        "changedAt": "2026-04-22T03:20:28.004Z",
+        "changedBy": "system"
+      }
+    ]
+  }
+]

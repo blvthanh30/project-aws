@@ -8,9 +8,18 @@
     "tag": "LIMITED",
     "desc": "Áo thun form boxy, vải cotton dày và dễ lên đồ mỗi ngày.",
     "material": "100% cotton cao cấp",
-    "sizes": ["S", "M", "L", "XL"],
-    "colors": ["Đen", "Trắng kem"],
-    "stock": 18
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Đen",
+      "Trắng kem"
+    ],
+    "stock": 16,
+    "updatedAt": "2026-04-23T07:02:51.789Z"
   },
   {
     "id": 2,
@@ -21,9 +30,17 @@
     "tag": "BEST SELLER",
     "desc": "Hoodie nỉ dày, form rộng vừa và logo phản quang nổi bật.",
     "material": "Nỉ heavyweight",
-    "sizes": ["M", "L", "XL"],
-    "colors": ["Xám than", "Xám đá"],
-    "stock": 9
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Xám than",
+      "Xám đá"
+    ],
+    "stock": 6,
+    "updatedAt": "2026-04-23T02:34:17.872Z"
   },
   {
     "id": 3,
@@ -34,9 +51,17 @@
     "tag": "NEW",
     "desc": "Quần cargo gọn form, dễ phối với áo thun và hoodie.",
     "material": "Vải chống thấm nhẹ",
-    "sizes": ["M", "L", "XL"],
-    "colors": ["Đen", "Xanh olive"],
-    "stock": 14
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Đen",
+      "Xanh olive"
+    ],
+    "stock": 9,
+    "updatedAt": "2026-04-23T07:02:51.789Z"
   },
   {
     "id": 4,
@@ -47,8 +72,15 @@
     "tag": "NEW",
     "desc": "Áo khoác nhẹ để layer, phù hợp những set đồ chuyển mùa.",
     "material": "Cotton twill",
-    "sizes": ["M", "L", "XL"],
-    "colors": ["Be cát", "Đen"],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Be cát",
+      "Đen"
+    ],
     "stock": 11
   },
   {
@@ -60,9 +92,15 @@
     "tag": "LIMITED",
     "desc": "Túi tote cứng form, phù hợp mang hằng ngày và chụp lookbook.",
     "material": "Canvas dày",
-    "sizes": ["Một kích thước"],
-    "colors": ["Kem tự nhiên", "Đen"],
-    "stock": 24
+    "sizes": [
+      "Một kích thước"
+    ],
+    "colors": [
+      "Kem tự nhiên",
+      "Đen"
+    ],
+    "stock": 24,
+    "updatedAt": "2026-04-22T10:54:35.616Z"
   },
   {
     "id": 6,
@@ -73,8 +111,13 @@
     "tag": "BEST SELLER",
     "desc": "Nón 6 panel gọn dáng, dễ mix với áo thun và overshirt.",
     "material": "Cotton drill",
-    "sizes": ["Một kích thước"],
-    "colors": ["Đen", "Nâu mocha"],
+    "sizes": [
+      "Một kích thước"
+    ],
+    "colors": [
+      "Đen",
+      "Nâu mocha"
+    ],
     "stock": 16
   },
   {
@@ -86,8 +129,16 @@
     "tag": "NEW",
     "desc": "Áo thun dáng rộng với line in tối giản, hợp mặc hằng ngày và lên ảnh lookbook.",
     "material": "Cotton compact 2 chiều",
-    "sizes": ["S", "M", "L", "XL"],
-    "colors": ["Đen", "Xám khói"],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Đen",
+      "Xám khói"
+    ],
     "stock": 22
   },
   {
@@ -99,8 +150,15 @@
     "tag": "LIMITED",
     "desc": "Sơ mi cổ Cuban phom thoáng, giúp set đồ mùa nóng vẫn gọn và có điểm nhấn.",
     "material": "Linen pha cotton",
-    "sizes": ["M", "L", "XL"],
-    "colors": ["Đen huyền", "Kem lạnh"],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Đen huyền",
+      "Kem lạnh"
+    ],
     "stock": 10
   },
   {
@@ -112,8 +170,17 @@
     "tag": "BEST SELLER",
     "desc": "Quần jeans ống suông, wash nhẹ và gấu cắt thô để phối cùng tee hoặc hoodie đều đẹp.",
     "material": "Denim 13oz",
-    "sizes": ["29", "30", "31", "32", "34"],
-    "colors": ["Xanh stone", "Đen wash"],
+    "sizes": [
+      "29",
+      "30",
+      "31",
+      "32",
+      "34"
+    ],
+    "colors": [
+      "Xanh stone",
+      "Đen wash"
+    ],
     "stock": 13
   },
   {
@@ -125,8 +192,15 @@
     "tag": "NEW",
     "desc": "Bomber thân ngắn, đứng phom và dễ phối cho những outfit thiên hướng streetwear mạnh hơn.",
     "material": "Nylon chống gió",
-    "sizes": ["M", "L", "XL"],
-    "colors": ["Rêu đậm", "Đen"],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Rêu đậm",
+      "Đen"
+    ],
     "stock": 8
   },
   {
@@ -138,8 +212,13 @@
     "tag": "NEW",
     "desc": "Túi đeo chéo nhỏ gọn, đủ đựng điện thoại, ví và phụ kiện cơ bản khi đi phố.",
     "material": "Polyester phủ chống nước",
-    "sizes": ["Một kích thước"],
-    "colors": ["Đen", "Xám xi măng"],
+    "sizes": [
+      "Một kích thước"
+    ],
+    "colors": [
+      "Đen",
+      "Xám xi măng"
+    ],
     "stock": 19
   },
   {
@@ -151,8 +230,15 @@
     "tag": "LIMITED",
     "desc": "Polo dệt mềm, tạo cảm giác chỉn chu hơn nhưng vẫn giữ tinh thần trẻ và dễ mặc.",
     "material": "Cotton knit",
-    "sizes": ["M", "L", "XL"],
-    "colors": ["Kem", "Nâu cacao"],
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Kem",
+      "Nâu cacao"
+    ],
     "stock": 12
   }
 ]

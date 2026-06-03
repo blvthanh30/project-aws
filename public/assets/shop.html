@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body data-page="shop">
     <div id="loader" aria-hidden="true"><span>VOIDX</span></div>
@@ -23,16 +23,18 @@
                     <a href="/san-pham" class="is-current">Sản phẩm</a>
                     <a href="/gioi-thieu">Giới thiệu</a>
                     <a href="/chinh-sach">Chính sách</a>
+                    <a href="/tra-cuu-don-hang">Tra cứu đơn</a>
                     <a href="/lien-he">Liên hệ</a>
                     <a href="/dang-nhap">Đăng nhập</a>
                     <a href="/admin" class="admin-link">Quản trị</a>
                     <button type="button" class="cart-button" id="cart-button">Giỏ hàng <span id="cart-count">0</span></button>
                 </div>
             </nav>
+
             <div class="page-hero-content">
-                <p class="eyebrow">Trang chốt đơn chính</p>
-                <h1>Toàn bộ sản phẩm được gom về một nơi để khách mua nhanh hơn.</h1>
-                <p>Ở đây khách chỉ tập trung vào việc xem hàng, lọc theo nhu cầu, so sánh nhanh và thêm vào giỏ.</p>
+                <p class="eyebrow">Catalog bán hàng</p>
+                <h1>Toàn bộ sản phẩm được sắp gọn để khách tìm nhanh và chốt đơn rõ ràng hơn.</h1>
+                <p>Khu vực này tập trung vào một việc duy nhất: giúp khách lọc đúng mẫu cần mua theo tên, loại sản phẩm, khoảng giá và xu hướng nổi bật.</p>
             </div>
         </header>
 
@@ -40,23 +42,75 @@
             <section class="collection-section compact-top">
                 <div class="section-head">
                     <div>
-                        <p class="eyebrow">Catalog</p>
+                        <p class="eyebrow">Bộ sưu tập</p>
                         <h2>Tất cả sản phẩm</h2>
                     </div>
-                    <p class="section-copy">Tách riêng trang sản phẩm giúp khu vực này thoáng hơn, dễ quét mắt hơn và hỗ trợ mua hàng tốt hơn nhiều so với việc nhét toàn bộ vào trang chủ.</p>
+                    <p class="section-copy">Khi số lượng mẫu tăng lên, khách vẫn có thể đi từ tìm kiếm nhanh đến lọc chi tiết mà không bị rối mắt.</p>
                 </div>
-                <div class="catalog-toolbar">
-                    <div class="filter-bar" id="filter-bar">
-                        <button type="button" class="filter-chip active" data-filter="all">Tất cả</button>
-                        <button type="button" class="filter-chip" data-filter="LIMITED">Giới hạn</button>
-                        <button type="button" class="filter-chip" data-filter="BEST SELLER">Bán chạy</button>
-                        <button type="button" class="filter-chip" data-filter="NEW">Mới nhất</button>
-                    </div>
-                    <label class="search-box" for="search-input">
-                        <span>Tìm sản phẩm</span>
-                        <input id="search-input" type="search" placeholder="Áo, hoodie, quần, nón...">
-                    </label>
+
+                <div class="catalog-shell">
+                    <section class="catalog-panel catalog-panel--primary">
+                        <div class="catalog-panel-head">
+                            <div>
+                                <p class="eyebrow">Bộ lọc nhanh</p>
+                                <h3>Chọn hướng xem trước</h3>
+                            </div>
+                            <p>Phù hợp khi khách mới vào trang và muốn đi theo nhóm nổi bật.</p>
+                        </div>
+
+                        <div class="filter-bar" id="filter-bar">
+                            <button type="button" class="filter-chip active" data-filter="all">Tất cả</button>
+                            <button type="button" class="filter-chip" data-filter="LIMITED">Giới hạn</button>
+                            <button type="button" class="filter-chip" data-filter="BEST SELLER">Bán chạy</button>
+                            <button type="button" class="filter-chip" data-filter="NEW">Mới nhất</button>
+                        </div>
+                    </section>
+
+                    <section class="catalog-panel">
+                        <div class="catalog-panel-head">
+                            <div>
+                                <p class="eyebrow">Tìm kiếm và lọc</p>
+                                <h3>Thu hẹp danh sách theo nhu cầu</h3>
+                            </div>
+                            <p>Khách có thể nhập tên sản phẩm, chọn loại hàng và lọc theo mức giá phù hợp.</p>
+                        </div>
+
+                        <div class="catalog-toolbar">
+                            <div class="catalog-toolbar-main">
+                                <label class="search-box search-box--wide" for="search-input">
+                                    <span>Tìm sản phẩm</span>
+                                    <input id="search-input" type="search" placeholder="Ví dụ: áo thun, hoodie, quần cargo...">
+                                </label>
+                                <label class="search-box" for="category-filter">
+                                    <span>Loại sản phẩm</span>
+                                    <select id="category-filter">
+                                        <option value="all">Tất cả loại sản phẩm</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="catalog-advanced-filters">
+                                <label class="search-box" for="price-filter">
+                                    <span>Khoảng giá</span>
+                                    <select id="price-filter">
+                                        <option value="all">Tất cả mức giá</option>
+                                        <option value="0-400000">Dưới 400.000 VNĐ</option>
+                                        <option value="400000-600000">400.000 - 600.000 VNĐ</option>
+                                        <option value="600000-800000">600.000 - 800.000 VNĐ</option>
+                                        <option value="800000-1000000">800.000 - 1.000.000 VNĐ</option>
+                                        <option value="1000000+">Trên 1.000.000 VNĐ</option>
+                                    </select>
+                                </label>
+
+                                <div class="catalog-actions">
+                                    <p class="catalog-result-count" id="catalog-result-count">Đang tải sản phẩm...</p>
+                                    <button type="button" class="ghost-btn catalog-reset-btn" id="catalog-reset-btn">Đặt lại bộ lọc</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
+
                 <div class="product-grid" id="product-container" aria-live="polite"></div>
             </section>
         </main>
@@ -81,6 +135,7 @@
                         <a href="/san-pham">Sản phẩm</a>
                         <a href="/gioi-thieu">Giới thiệu</a>
                         <a href="/chinh-sach">Chính sách</a>
+                        <a href="/tra-cuu-don-hang">Tra cứu đơn</a>
                         <a href="/lien-he">Liên hệ</a>
                     </div>
                 </section>
@@ -115,7 +170,10 @@
         <div class="cart-overlay" id="cart-overlay"></div>
         <div class="cart-panel">
             <div class="cart-header">
-                <div><p class="eyebrow">Giỏ hàng</p><h2>Thông tin đặt hàng</h2></div>
+                <div>
+                    <p class="eyebrow">Giỏ hàng</p>
+                    <h2>Thông tin đặt hàng</h2>
+                </div>
                 <button type="button" class="close-cart" id="close-cart" aria-label="Đóng giỏ hàng">×</button>
             </div>
             <div class="cart-body">
@@ -139,6 +197,6 @@
     </aside>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="/assets/main.js"></script>
+    <script src="/assets/main.js?v=20260422-filterlayout2"></script>
 </body>
 </html>

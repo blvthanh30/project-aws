@@ -1,5 +1,13 @@
 [
   {
+    "id": "9f7e4b2c-c9ab-4db7-b7fd-voidxadmin2026",
+    "name": "Admin VOIDX",
+    "email": "admin@voidx.vn",
+    "passwordHash": "17de2cb4ec0ca05f5b839daac59abdce0f90a68a6ffbe43b7f25620bdd2ffa66",
+    "role": "admin",
+    "createdAt": "2026-04-22T03:45:00.000Z"
+  },
+  {
     "id": "6d998580-007b-477d-9148-28e23b4ec26b",
     "name": "vanthanh",
     "email": "vanthanh@gmail.com",

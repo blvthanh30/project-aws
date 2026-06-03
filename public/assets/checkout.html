@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOIDX | Thanh toán</title>
+    <meta name="description" content="Trang thanh toán riêng của VOIDX với thông tin giao hàng, địa chỉ Việt Nam và tóm tắt giỏ hàng.">
+    <meta name="theme-color" content="#111111">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body data-page="checkout" class="checkout-minimal-body">
+    <div id="loader" aria-hidden="true"><span>VOIDX</span></div>
+
+    <header class="checkout-topbar">
+        <a href="/" class="checkout-wordmark">VOIDX<span>.</span></a>
+    </header>
+
+    <main class="checkout-minimal-shell">
+        <nav class="checkout-steps" id="checkout-steps" aria-label="Tiến trình thanh toán">
+            <span class="is-active" data-step="cart"><b></b>Giỏ hàng</span>
+            <span class="is-active" data-step="shipping"><b></b>Thông tin giao hàng</span>
+            <span data-step="confirm"><b></b>Xác nhận đơn</span>
+        </nav>
+
+        <div class="checkout-minimal-grid" id="checkout-flow">
+            <section class="checkout-minimal-form">
+                <div class="checkout-minimal-head">
+                    <p>Thông tin khách hàng</p>
+                    <h1>Thông tin thanh toán</h1>
+                    <span>Nhập thông tin nhận hàng. Hệ thống sẽ kiểm tra giỏ hàng, lưu đơn và trả về mã đơn để bạn theo dõi.</span>
+                </div>
+
+                <form class="customer-form checkout-page-form" id="customer-form">
+                    <div class="form-grid">
+                        <label><span>Họ tên</span><input id="customer-name" name="name" type="text" placeholder="Nguyễn Văn A" required></label>
+                        <label><span>Số điện thoại</span><input id="customer-phone" name="phone" type="tel" placeholder="0900000000" required></label>
+                    </div>
+                    <label><span>Địa chỉ nhận hàng</span><textarea id="customer-address" name="address" rows="3" placeholder="Số nhà, đường, phường, quận..." required></textarea></label>
+
+                    <div class="checkout-payment-block">
+                        <div class="checkout-payment-title">
+                            <p>Thanh toán & vận chuyển</p>
+                            <span>Chọn cách thanh toán và đơn vị giao hàng giả lập cho đơn này.</span>
+                        </div>
+                        <div class="checkout-extra-grid">
+                            <label>
+                                <span>Email nhận xác nhận</span>
+                                <input id="customer-email" name="email" type="email" placeholder="tenban@email.com">
+                            </label>
+                            <label>
+                                <span>Hình thức giao hàng</span>
+                                <select id="customer-shipping-method" name="shippingMethod">
+                                    <option value="shop">Shop tự giao / xác nhận sau</option>
+                                    <option value="ghtk">Giao Hàng Tiết Kiệm (giả lập)</option>
+                                    <option value="ghn">Giao Hàng Nhanh (giả lập)</option>
+                                </select>
+                            </label>
+                            <label>
+                                <span>Phương thức thanh toán</span>
+                                <select id="customer-payment-method" name="paymentMethod">
+                                    <option value="cod">Thanh toán khi nhận hàng</option>
+                                    <option value="bank">Chuyển khoản ngân hàng VietQR</option>
+                                    <option value="momo">Ví MoMo giả lập</option>
+                                    <option value="vnpay">VNPay giả lập</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="payment-preview" id="payment-preview"></div>
+                    </div>
+
+                    <label><span>Ghi chú đơn hàng</span><textarea id="customer-note" name="note" rows="3" placeholder="Tư vấn size, thời gian giao, yêu cầu đặc biệt..."></textarea></label>
+                </form>
+
+                <div class="checkout-minimal-actions">
+                    <a href="/san-pham">Quay lại mua hàng</a>
+                    <button type="button" class="checkout-btn" id="checkout-btn">Tiếp tục đặt hàng</button>
+                </div>
+            </section>
+
+            <aside class="checkout-minimal-summary">
+                <div class="checkout-summary-head">
+                    <p>Giỏ hàng của bạn</p>
+                    <a href="/san-pham">Sửa giỏ hàng</a>
+                </div>
+
+                <div class="cart-items checkout-cart-items" id="cart-items"></div>
+
+                <div class="checkout-discount-row">
+                    <input type="text" id="coupon-code" placeholder="Mã giảm giá">
+                    <button type="button" id="apply-coupon-btn">Áp dụng</button>
+                </div>
+                <p class="coupon-message" id="coupon-message"></p>
+
+                <div class="cart-summary checkout-page-summary">
+                    <div class="summary-row"><span>Tạm tính</span><strong id="cart-subtotal">0 VNĐ</strong></div>
+                    <div class="summary-row coupon-summary-row" id="coupon-summary-row"><span>Giảm giá</span><strong id="coupon-discount">0 VNĐ</strong></div>
+                    <div class="summary-row total-summary-row"><span>Tổng thanh toán</span><strong id="cart-total">0 VNĐ</strong></div>
+                    <div class="summary-row"><span>Vận chuyển</span><strong>Shop xác nhận</strong></div>
+                    <div class="summary-row"><span>Thanh toán</span><strong>Theo lựa chọn</strong></div>
+                    <p class="summary-note">Sau khi gửi đơn, shop sẽ liên hệ xác nhận thông tin và thời gian giao hàng.</p>
+                </div>
+            </aside>
+        </div>
+
+        <section class="checkout-confirmation is-hidden" id="checkout-confirmation" aria-live="polite">
+            <p class="checkout-confirmation-kicker">Xác nhận đơn</p>
+            <h2>Đơn hàng đã được gửi thành công</h2>
+            <p class="checkout-confirmation-copy">VOIDX đã nhận đơn của bạn. Shop sẽ liên hệ xác nhận thông tin và thời gian giao hàng trong thời gian sớm nhất.</p>
+
+            <div class="checkout-confirmation-code">
+                <span>Mã đơn hàng</span>
+                <strong id="checkout-confirmation-code">Đang cập nhật</strong>
+            </div>
+
+            <div class="checkout-confirmation-meta">
+                <div><span>Tổng sản phẩm</span><strong id="checkout-confirmation-items">0</strong></div>
+                <div><span>Tổng thanh toán</span><strong id="checkout-confirmation-total">0 VNĐ</strong></div>
+                <div><span>Trạng thái</span><strong>Đã tiếp nhận</strong></div>
+            </div>
+
+            <div class="checkout-confirmation-actions">
+                <a class="btn-primary" id="checkout-track-link" href="/tra-cuu-don-hang">Tra cứu đơn hàng</a>
+                <a class="btn-secondary" href="/san-pham">Tiếp tục mua sắm</a>
+            </div>
+        </section>
+
+        <footer class="checkout-minimal-footer">
+            <span>© 2026 VOIDX Studio</span>
+            <a href="/tra-cuu-don-hang">Tra cứu đơn hàng</a>
+        </footer>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/assets/main.js?v=20260423-payment-shipping-page2"></script>
+</body>
+</html>

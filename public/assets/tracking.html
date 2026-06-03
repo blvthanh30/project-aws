@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOIDX | Chính sách</title>
-    <meta name="description" content="Trang chính sách cửa hàng với giao hàng, đổi size, thanh toán và các câu hỏi thường gặp.">
+    <title>VOIDX | Tra cứu đơn hàng</title>
+    <meta name="description" content="Tra cứu trạng thái đơn hàng theo mã đơn hoặc số điện thoại tại VOIDX.">
     <meta name="theme-color" content="#111111">
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body data-page="policies">
+<body data-page="tracking">
     <div id="loader" aria-hidden="true"><span>VOIDX</span></div>
+
     <div class="site-shell">
         <header class="page-hero">
             <nav class="navbar">
@@ -22,71 +23,44 @@
                     <a href="/">Trang chủ</a>
                     <a href="/san-pham">Sản phẩm</a>
                     <a href="/gioi-thieu">Giới thiệu</a>
-                    <a href="/chinh-sach" class="is-current">Chính sách</a>
-                    <a href="/tra-cuu-don-hang">Tra cứu đơn</a>
+                    <a href="/chinh-sach">Chính sách</a>
+                    <a href="/tra-cuu-don-hang" class="is-current">Tra cứu đơn</a>
                     <a href="/lien-he">Liên hệ</a>
                     <a href="/dang-nhap">Đăng nhập</a>
                     <a href="/admin" class="admin-link">Quản trị</a>
                     <button type="button" class="cart-button" id="cart-button">Giỏ hàng <span id="cart-count">0</span></button>
                 </div>
             </nav>
+
             <div class="page-hero-content">
-                <p class="eyebrow">Trang trả lời trước câu hỏi</p>
-                <h1>Chính sách nên có trang riêng để khách tìm được ngay khi họ cần.</h1>
-                <p>Tách riêng phần chính sách giúp khách bớt phải nhắn hỏi, đồng thời khiến trải nghiệm mua hàng chuyên nghiệp hơn.</p>
+                <p class="eyebrow">Order tracking</p>
+                <h1>Theo dõi đơn hàng của bạn trong vài giây</h1>
+                <p>Nhập mã đơn hàng hoặc số điện thoại đã đặt để biết đơn đang chờ xác nhận, đang xử lý hay đang trên đường giao tới bạn.</p>
             </div>
         </header>
 
         <main>
-            <section class="business-section compact-top">
-                <div class="section-head">
-                    <div>
-                        <p class="eyebrow">Chính sách chính</p>
-                        <h2>Những nội dung ảnh hưởng trực tiếp đến quyết định mua</h2>
+            <section class="tracking-section compact-top">
+                <div class="tracking-shell">
+                    <div class="tracking-intro">
+                        <p class="eyebrow">Tra cứu nhanh</p>
+                        <h2>Biết ngay đơn hàng đang ở đâu</h2>
+                        <p>Khách chỉ cần nhập một thông tin duy nhất là có thể xem trạng thái đơn hiện tại và các mốc cập nhật gần nhất.</p>
                     </div>
-                </div>
-                <div class="policy-grid">
-                    <article class="policy-card">
-                        <p class="eyebrow">Giao hàng</p>
-                        <h3>Chính sách giao hàng</h3>
-                        <p id="shipping-policy">Đang cập nhật...</p>
-                    </article>
-                    <article class="policy-card">
-                        <p class="eyebrow">Đổi trả</p>
-                        <h3>Chính sách đổi size</h3>
-                        <p id="return-policy">Đang cập nhật...</p>
-                    </article>
-                    <article class="policy-card">
-                        <p class="eyebrow">Thanh toán</p>
-                        <h3>Hình thức thanh toán</h3>
-                        <p id="payment-policy">Đang cập nhật...</p>
-                    </article>
-                </div>
-            </section>
 
-            <section class="business-section">
-                <div class="section-head">
-                    <div>
-                        <p class="eyebrow">Câu hỏi thường gặp</p>
-                        <h2>Tách riêng để khách đọc nhanh trước khi mua</h2>
+                    <form class="tracking-form" id="tracking-form">
+                        <label for="tracking-query">
+                            <span>Mã đơn hoặc số điện thoại</span>
+                            <input id="tracking-query" name="query" type="text" placeholder="VDX-28028004-0F33 hoặc 0923627588" required>
+                        </label>
+                        <button type="submit" class="cta-btn">Tra cứu đơn hàng</button>
+                    </form>
+
+                    <div class="tracking-result" id="tracking-result" aria-live="polite">
+                        <div class="empty-state">
+                            Nhập mã đơn hoặc số điện thoại để xem tình trạng đơn hàng của bạn.
+                        </div>
                     </div>
-                </div>
-                <div class="policy-grid">
-                    <article class="policy-card">
-                        <p class="eyebrow">COD</p>
-                        <h3>Shop có nhận COD không?</h3>
-                        <p>Có. Shop sẽ xác nhận lại thông tin đơn trước khi đóng gói và giao hàng.</p>
-                    </article>
-                    <article class="policy-card">
-                        <p class="eyebrow">Đổi size</p>
-                        <h3>Nếu sai size thì làm thế nào?</h3>
-                        <p>Khách có thể giữ nguyên sản phẩm, liên hệ shop và làm theo hướng dẫn đổi size trong thời hạn hỗ trợ.</p>
-                    </article>
-                    <article class="policy-card">
-                        <p class="eyebrow">Thời gian</p>
-                        <h3>Bao lâu thì nhận được hàng?</h3>
-                        <p>Nội thành thường nhanh hơn. Tỉnh thành khác sẽ được xác nhận thời gian cụ thể khi shop gọi lại.</p>
-                    </article>
                 </div>
             </section>
         </main>
@@ -96,11 +70,11 @@
                 <section class="footer-brand">
                     <p class="footer-kicker">Voidx Studio</p>
                     <a href="/" class="logo">VOIDX<span>.</span></a>
-                    <p class="footer-copy">Trang chính sách riêng giúp khách tra cứu đúng lúc, yên tâm hơn trước khi mua và giảm phần tư vấn lặp lại cho shop.</p>
+                    <p class="footer-copy">Trang tra cứu đơn được tách riêng để khách chủ động kiểm tra trạng thái mà không cần nhắn hỏi shop mỗi lần muốn biết đơn đã đi tới đâu.</p>
                     <div class="footer-tags">
-                        <span>Minh bạch</span>
-                        <span>Đổi trả</span>
-                        <span>Giao hàng</span>
+                        <span>Tracking</span>
+                        <span>CSKH</span>
+                        <span>Đơn hàng</span>
                     </div>
                 </section>
 
@@ -110,7 +84,6 @@
                         <a href="/">Trang chủ</a>
                         <a href="/san-pham">Sản phẩm</a>
                         <a href="/gioi-thieu">Giới thiệu</a>
-                        <a href="/chinh-sach">Chính sách</a>
                         <a href="/tra-cuu-don-hang">Tra cứu đơn</a>
                         <a href="/lien-he">Liên hệ</a>
                     </div>
@@ -136,7 +109,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-note">Từ footer khách vẫn có thể quay lại đúng nơi họ cần mà không bị lạc khỏi hành trình mua hàng.</p>
+                <p class="footer-note">Theo dõi đơn hàng rõ ràng giúp khách yên tâm hơn sau khi đặt và giúp shop bớt áp lực trả lời thủ công.</p>
                 <p class="copyright">Bản quyền 2026 VOIDX Studio. Đã đăng ký mọi quyền.</p>
             </div>
         </footer>
@@ -146,7 +119,10 @@
         <div class="cart-overlay" id="cart-overlay"></div>
         <div class="cart-panel">
             <div class="cart-header">
-                <div><p class="eyebrow">Giỏ hàng</p><h2>Thông tin đặt hàng</h2></div>
+                <div>
+                    <p class="eyebrow">Giỏ hàng</p>
+                    <h2>Thông tin đặt hàng</h2>
+                </div>
                 <button type="button" class="close-cart" id="close-cart" aria-label="Đóng giỏ hàng">×</button>
             </div>
             <div class="cart-body">
@@ -170,6 +146,7 @@
     </aside>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="/assets/main.js?v=20260422-searchfix"></script>
+    <script src="/assets/main.js?v=20260422-searchfix2"></script>
+    <script src="/assets/tracking.js?v=20260422-ordertracking"></script>
 </body>
 </html>

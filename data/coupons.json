@@ -1,0 +1,16 @@
+[
+  {
+    "id": "CHAO2026",
+    "code": "CHAO2026",
+    "type": "percent",
+    "value": 10,
+    "minOrder": 0,
+    "maxDiscount": 100000,
+    "usageLimit": 200,
+    "usedCount": 0,
+    "active": true,
+    "expiresAt": "",
+    "createdAt": "2026-04-23T00:00:00.000Z",
+    "updatedAt": "2026-04-23T00:00:00.000Z"
+  }
+]
