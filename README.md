@@ -68,3 +68,48 @@ The API receives order data such as customer name, product name, and quantity. L
   "productName": "VOIDX Oversize Tee",
   "quantity": 1
 }
+```
+
+### Full Serverless Architecture
+
+Website / Client  
+→ API Gateway  
+→ Lambda  
+→ DynamoDB  
+→ SQS  
+→ SNS
+
+### AWS Services Summary
+
+| AWS Service | Purpose in Project |
+|---|---|
+| Amazon EC2 | Hosts the Node.js VOIDX website |
+| Nginx | Reverse proxy from port 80 to Node.js port 3000 |
+| Application Load Balancer | Routes traffic to EC2 |
+| Target Group | Performs health checks for the EC2 instance |
+| CloudFront | CDN/cache layer in front of the Load Balancer |
+| EBS Snapshot | Backs up the EC2 volume |
+| API Gateway | Provides the `POST /orders` API endpoint |
+| Lambda | Processes order creation |
+| DynamoDB | Stores order data in the `Orders` table |
+| SQS | Queues order messages for asynchronous processing |
+| SNS | Sends order notifications |
+| Security Group | Controls inbound traffic |
+| GitHub | Stores source code and deployment documentation |
+
+## Evidence Screenshots
+
+The following screenshots should be included in the final report:
+
+- EC2 instance running
+- Website running through EC2 public IP
+- Website running through Application Load Balancer
+- Website running through CloudFront
+- Target Group status: Healthy
+- EBS Snapshot status: Completed
+- API Gateway route: `POST /orders`
+- Lambda test result: success
+- DynamoDB `Orders` table with order item
+- SQS queue message
+- SNS topic and subscription
+- GitHub repository with deployment documentation
