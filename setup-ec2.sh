@@ -1,30 +1,29 @@
 #!/bin/bash
 
-set -ex
-exec > >(tee /var/log/user-data.log | logger -t user-data 2>/dev/console) 2>&1
+echo "=== Start setting up VOIDX EC2 server ==="
+
+# 1. Update OS and install packages
+sudo dnf update -y
+sudo dnf install -y git nginx openssl
+
+curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+sudo dnf install -y nodejs
 
 APP_DIR="/opt/voidx-shop"
 APP_USER="ec2-user"
 APP_PORT=3000
 NODE_PORT=5001
 
-echo "=== [1/7] Update OS and install packages ==="
-dnf update -y
-dnf install -y git nginx openssl
-
-curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
-dnf install -y nodejs
-
 echo "=== [2/7] Prepare app directory ==="
-rm -rf "${APP_DIR}"
-mkdir -p "${APP_DIR}"
+sudo rm -rf "${APP_DIR}"
+sudo mkdir -p "${APP_DIR}"
 
 echo "=== [3/7] Clone repo ==="
-git clone --depth 1 "https://github.com/blvthanh30/project-aws" "${APP_DIR}" || exit 1
-chown -R "${APP_USER}:${APP_USER}" "${APP_DIR}"
+sudo git clone --depth 1 "https://github.com/blvthanh30/project-aws" "${APP_DIR}" || exit 1
+sudo chown -R "${APP_USER}:${APP_USER}" "${APP_DIR}"
 
 echo "=== [4/7] Install dependencies ==="
-runuser -u "${APP_USER}" -- bash -lc "
+sudo runuser -u "${APP_USER}" -- bash -lc "
   cd '${APP_DIR}'
   if [ -f package-lock.json ]; then
     npm ci
@@ -34,40 +33,40 @@ runuser -u "${APP_USER}" -- bash -lc "
 "
 
 echo "=== [5/7] Create .env ==="
-cat > "${APP_DIR}/.env" <<EOF_ENV
+sudo tee "${APP_DIR}/.env" > /dev/null <<EOF_ENV
 PORT=${NODE_PORT}
 HOST=0.0.0.0
 NODE_ENV=production
 EOF_ENV
 
-chown "${APP_USER}:${APP_USER}" "${APP_DIR}/.env"
-chmod 600 "${APP_DIR}/.env"
+sudo chown "${APP_USER}:${APP_USER}" "${APP_DIR}/.env"
+sudo chmod 600 "${APP_DIR}/.env"
 
 echo "=== [6/7] Configure nginx ==="
-cat > /etc/nginx/conf.d/voidx-shop.conf <<EOF_NGINX
+sudo tee /etc/nginx/conf.d/voidx-shop.conf > /dev/null <<'EOF_NGINX'
 server {
-    listen ${APP_PORT};
+    listen 3000;
     server_name _;
 
     location /health {
         access_log off;
-        proxy_pass http://127.0.0.1:${NODE_PORT}/health;
+        proxy_pass http://127.0.0.1:5001/health;
         proxy_http_version 1.1;
-        proxy_set_header Host \$host;
-        proxy_set_header X-Forwarded-Host \$host;
-        proxy_set_header X-Real-IP \$remote_addr;
-        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto \$scheme;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
     }
 
     location / {
-        proxy_pass http://127.0.0.1:${NODE_PORT};
+        proxy_pass http://127.0.0.1:5001;
         proxy_http_version 1.1;
-        proxy_set_header Host \$host;
-        proxy_set_header X-Forwarded-Host \$host;
-        proxy_set_header X-Real-IP \$remote_addr;
-        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto \$scheme;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
         proxy_read_timeout 60s;
         proxy_connect_timeout 10s;
     }
@@ -78,13 +77,13 @@ server {
 }
 EOF_NGINX
 
-rm -f /etc/nginx/conf.d/default.conf
-nginx -t
-systemctl enable nginx
-systemctl restart nginx
+sudo rm -f /etc/nginx/conf.d/default.conf
+sudo nginx -t
+sudo systemctl enable nginx
+sudo systemctl restart nginx
 
 echo "=== [7/7] Create systemd service ==="
-cat > /etc/systemd/system/voidx-shop.service <<EOF_SERVICE
+sudo tee /etc/systemd/system/voidx-shop.service > /dev/null <<EOF_SERVICE
 [Unit]
 Description=VOIDX Shop - Node.js App
 After=network-online.target nginx.service
@@ -104,12 +103,12 @@ LimitNOFILE=65536
 WantedBy=multi-user.target
 EOF_SERVICE
 
-systemctl daemon-reload
-systemctl enable voidx-shop.service
-systemctl start voidx-shop.service
+sudo systemctl daemon-reload
+sudo systemctl enable voidx-shop.service
+sudo systemctl start voidx-shop.service
 
 sleep 5
-systemctl reload nginx || true
+sudo systemctl reload nginx || true
 
 echo ""
 echo "======================================================="
@@ -122,5 +121,5 @@ echo ""
 echo "  Check app   : systemctl status voidx-shop"
 echo "  App logs    : journalctl -u voidx-shop -f"
 echo "  nginx       : systemctl status nginx"
-echo "  Boot log    : cat /var/log/user-data.log"
+echo "  Boot log    : sudo cat /var/log/user-data.log"
 echo "======================================================="
